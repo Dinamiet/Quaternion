@@ -74,8 +74,11 @@ target_sources(
 		src/quaternion.c
 )
 
+add_subdirectory(lib)
 target_link_libraries(
 	${PROJECT_NAME}
 	PRIVATE
 		m
+	PUBLIC
+		Vector
 )
