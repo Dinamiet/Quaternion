@@ -42,6 +42,15 @@ Quaternion Quaternion_Unit(const Quaternion a)
 	return q;
 }
 
+void Quaternion_VectorAngle(const Quaternion q, Vector* v, float* theta)
+{
+	*theta  = 2.0f * acosf(q.R);
+	float s = sinf(*theta / 2.0f);
+	v->X    = q.V.X / s;
+	v->Y    = q.V.Y / s;
+	v->Z    = q.V.Z / s;
+}
+
 Vector Quaternion_RotateVector(const Vector v, const Quaternion q)
 {
 	Vector t    = Vector_Cross(Vector_Scale(q.V, 2.0f), v);

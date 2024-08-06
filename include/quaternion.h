@@ -44,6 +44,14 @@ Quaternion Quaternion_Multiply(const Quaternion a, const Quaternion b);
 Quaternion Quaternion_Unit(const Quaternion a);
 
 /**
+ * Quaternion's vector and rotation components
+ * \param q The quaternion
+ * \param v The rotation vector of q
+ * \param theta Rotation angle around v of q
+ */
+void Quaternion_VectorAngle(const Quaternion q, Vector* v, float* theta);
+
+/**
  * Rotates vector according to a quaternion
  * \param v Vector to rotate
  * \param q Rotation quaternion
