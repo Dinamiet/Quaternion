@@ -60,3 +60,10 @@ Vector Quaternion_RotateVector(const Vector v, const Quaternion q)
 	Vector sum = Vector_Add(tmp1, tmp2);
 	return Vector_Add(v, sum);
 }
+
+void Quaternion_YawPitchRoll(const Quaternion q, float* yaw, float* pitch, float* roll)
+{
+	*roll  = atan2f(2 * (q.R * q.V.X + q.V.Y * q.V.Z), 1 - 2 * (q.V.X * q.V.X + q.V.Y * q.V.Y));
+	*pitch = asinf(2 * (q.R * q.V.Y - q.V.X * q.V.Z));
+	*yaw   = atan2f(2 * (q.R * q.V.Z + q.V.X * q.V.Y), 1 - 2 * (q.V.Y * q.V.Y + q.V.Z * q.V.Z));
+}

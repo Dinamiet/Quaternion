@@ -59,4 +59,13 @@ void Quaternion_VectorAngle(const Quaternion q, Vector* v, float* theta);
  */
 Vector Quaternion_RotateVector(const Vector v, const Quaternion q);
 
+/**
+ * Retreive quaternion's rotation values
+ * \param q The Quaternion
+ * \param yaw The Yaw angle of q
+ * \param pitch The Pitch angle of q
+ * \param roll The Roll angle of q
+ */
+void Quaternion_YawPitchRoll(const Quaternion q, float* yaw, float* pitch, float* roll);
+
 #endif
