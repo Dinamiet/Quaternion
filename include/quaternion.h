@@ -29,14 +29,6 @@ typedef struct _Quaternion_
 Quaternion Quaternion_Create(Vector v, float theta);
 
 /**
- * Add two quaternions together
- * \param a Quaternion A
- * \param b Quaternion B
- * \return A + B
- */
-Quaternion Quaternion_Add(const Quaternion a, const Quaternion b);
-
-/**
  * Multiply quaternions
  * \param a Quaternion A
  * \param b Quaternion B

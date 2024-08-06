@@ -17,15 +17,6 @@ Quaternion Quaternion_Create(Vector v, float theta)
 	return q;
 }
 
-Quaternion Quaternion_Add(const Quaternion a, const Quaternion b)
-{
-	Quaternion q;
-	q.R = a.R + b.R;
-	q.V = Vector_Add(a.V, b.V);
-
-	return q;
-}
-
 Quaternion Quaternion_Multiply(const Quaternion a, const Quaternion b)
 {
 	Quaternion q;
