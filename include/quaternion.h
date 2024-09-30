@@ -26,7 +26,25 @@ typedef struct _Quaternion_
  * \param theta Angle
  * \return New Quaternion
  */
-Quaternion Quaternion_Create(Vector v, float theta);
+Quaternion Quaternion_Create(const Vector v, const float theta);
+
+/**
+ * Create a Quaternion from its individial components
+ * \param w Quaternion W component
+ * \param x Quaternion X component
+ * \param y Quaternion Y component
+ * \param z Quaternion Z component
+ * \return New Quaternion
+ */
+Quaternion Quaternion_Make(const float w, const float x, const float y, const float z);
+
+/**
+ * Scales a quaternion by a factor
+ * \param q Quaternion to scale
+ * \param scale Factor by which to scale
+ * \return New scaled quaternion
+ */
+Quaternion Quaternion_Scale(const Quaternion q, const float scale);
 
 /**
  * Multiply quaternions

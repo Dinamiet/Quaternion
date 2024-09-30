@@ -2,7 +2,7 @@
 
 #include <math.h>
 
-Quaternion Quaternion_Create(Vector v, float theta)
+Quaternion Quaternion_Create(const Vector v, const float theta)
 {
 	Quaternion q;
 
@@ -15,6 +15,30 @@ Quaternion Quaternion_Create(Vector v, float theta)
 	q.V.Z = v.Z * s;
 
 	return q;
+}
+
+Quaternion Quaternion_Make(const float w, const float x, const float y, const float z)
+{
+	Quaternion q;
+
+	q.R   = w;
+	q.V.X = x;
+	q.V.Y = y;
+	q.V.Z = z;
+
+	return q;
+}
+
+Quaternion Quaternion_Scale(const Quaternion q, const float scale)
+{
+	Quaternion scaled;
+
+	scaled.R   = q.R * scale;
+	scaled.V.X = q.V.X * scale;
+	scaled.V.Y = q.V.Y * scale;
+	scaled.V.Z = q.V.Z * scale;
+
+	return scaled;
 }
 
 Quaternion Quaternion_Multiply(const Quaternion a, const Quaternion b)
