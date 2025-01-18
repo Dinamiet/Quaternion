@@ -6,9 +6,9 @@ set(FETCHCONTENT_QUIET OFF)
 FetchContent_Declare(
 	Vector
 	GIT_REPOSITORY
-		git@bitbucket.org:dinamiet/vector.git
+		git@github.com:Dinamiet/Vector.git
 	GIT_TAG
-		development
+		main
 	SOURCE_DIR
 		${CMAKE_SOURCE_DIR}/lib/Vector
 )
